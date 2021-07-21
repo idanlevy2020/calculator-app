@@ -1,7 +1,7 @@
 import './App.css';
-import CalculatorButtons from './CalculatorButtons';
+import CalculatorButtons, { buttons } from './CalculatorButtons';
 import CalculatorDisplay from './CalculatorDisplay';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
 	const [expression, setExpression] = useState([0]);
@@ -9,29 +9,51 @@ function App() {
 
 	console.log('expression', expression);
 
-	// check if use keyboard keys instead of mouse in calculator
-	window.addEventListener('keypress', function (e) {
-		console.log('e.which:', e.which);
-		console.log('e.keyCode', e.keyCode);
-		var keycode = e.which || e.keyCode;
-		var valueEntered = String.fromCharCode(keycode);
+	function onKeyPress(e) {
+		console.log('keypress');
+	}
 
-		let valueEnteredNumber = Number(valueEntered);
-		if (isNaN(valueEnteredNumber)) {
-			console.log('not number');
-			onClick(valueEntered);
-		} else {
-			console.log('number');
-			// onClick(valueEnteredNumber);
-			// if (buttons.value==valueEnteredNumber){
-			//   console.log('number');
-			// }
+	// useEffect - run callback AFTER every render (use for side effect in components)
+	useEffect(() => {
+		function onKeyPress(e) {
+			// enter keyCode 13
+			// remove keyCode 8
+			const keyCode = e.keyCode;
+			const valueEntered = String.fromCharCode(keyCode);
+			console.log('keyCode', keyCode, valueEntered);
+			console.log('valueEntered', valueEntered);
+
+			let valueEnteredNumber = Number(valueEntered);
+
+			if (isNaN(valueEnteredNumber)) {
+				// not number
+				if (keyCode === 8) {
+					const delBtn = buttons.find(btn => {
+						return btn.value === 'DEL';
+					});
+					onClick(delBtn);
+				}
+			} else {
+				// nubmer clicked
+
+				// 1) find button object by value
+				const button = buttons.find(btn => {
+					return btn.value === valueEnteredNumber;
+				});
+				// 2) call onclick function with button object
+				onClick(button);
+			}
 		}
+		window.addEventListener('keydown', onKeyPress);
+		return () => {
+			// return - run callback on unmount
+			window.removeEventListener('keydown', onKeyPress);
+		};
 	});
 
 	function onClick(button) {
 		console.log('in onClick expression', expression);
-		let copy_array = Array.from(expression); //Copy array by value
+		let copy_array = [...expression]; //Copy array by value
 		console.log('in onClick copy_array', copy_array);
 
 		if (button.value === 'DEL') {
@@ -73,6 +95,8 @@ function App() {
 				return setExpression(copy_array); //swap last charcter in valueBtn);
 			}
 		}
+
+		function onClick(butoon) {}
 
 		/*********if the user clicks the same operator twice **********/
 		//for example: in 4*8++ return 4*8+ , in 2+3.. return 2+3.
@@ -154,15 +178,24 @@ function App() {
 		} /*********end calculation **********/
 	} //end function onClick()
 
+	// render
 	return (
 		<div className={`App flex-column theme-${theme}`}>
 			<div className='header flex-row'>
 				<h1 id='calc'>calc</h1>
 				<span>THEME</span>
 				<div>
-					<span onClick={() => setTheme(1)} className='SeveralSituations'>1</span>
-					<span onClick={() => setTheme(2)}  className='SeveralSituations'> 2 </span>
-					<span onClick={() => setTheme(3)}  className='SeveralSituations'> 3 </span>
+					<span onClick={() => setTheme(1)} className='SeveralSituations'>
+						1
+					</span>
+					<span onClick={() => setTheme(2)} className='SeveralSituations'>
+						{' '}
+						2{' '}
+					</span>
+					<span onClick={() => setTheme(3)} className='SeveralSituations'>
+						{' '}
+						3{' '}
+					</span>
 					<button className='toggleBtn'>
 						<div></div>
 					</button>
