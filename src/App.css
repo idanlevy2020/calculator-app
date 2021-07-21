@@ -1,86 +1,98 @@
 :root {
-  --toggle-bgcolor: #3a4663;
-  --toggle-color: #ffffff;
-  --toogle-btnToggleColorCircle: #d03f2f;
-  --toogle-btnToggleColor:#242d44;
-  --toggle2-bgcolor: #e6e6e6;
-  --toogle2-btnToggleColor: #d2cdcd;
-  --toogle2-btnToggleColorCircle: #c85402;
+	--toggle-bgcolor: #3a4663;
+	--toggle-color: #ffffff;
+	--toogle-btnToggleColorCircle: #d03f2f;
+	--toogle-btnToggleColor: #242d44;
+	--toggle2-bgcolor: #e6e6e6;
+	--toogle2-btnToggleColor: #d2cdcd;
+	--toogle2-btnToggleColorCircle: #c85402;
 }
 
-.App{
-  width: 375px;
-  height: 667px;
-  background-color: var(--toggle-bgcolor);
-  align-items: center;
+.App.theme-1 {
+	--primary: #3a4663;
+	--btn-color: red;
+}
+.App.theme-2 {
+	--primary: #e6e6e6;
+	--btn-color: red;
+}
+.App.theme-3 {
+	--primary: blue;
+	--btn-color: green;
 }
 
-.header{
-  align-items: center;
-  margin: 10px 24px 10px 24px;
+.App {
+	width: 375px;
+	height: 667px;
+	background-color: var(--primary);
+	align-items: center;
+}
+
+.header {
+	align-items: center;
+	margin: 10px 24px 10px 24px;
 }
 
 .header > #calc {
-  width: 67px;
-  height: 36px;
-  margin: 4px 116px 4px 0;
-  font-family: Spartan;
-  /* font-size: 32px; */
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: -0.53px;
-  text-align: center;
-  color: var(--toggle-color);
+	width: 67px;
+	height: 36px;
+	margin: 4px 116px 4px 0;
+	font-family: Spartan;
+	/* font-size: 32px; */
+	font-weight: bold;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: -0.53px;
+	text-align: center;
+	color: var(--toggle-color);
 }
 
 /*THEME*/
-.header > span{
-  width: 51px;
-  height: 13px;
-  margin: 26px 21px 5px 0;
-  font-family: Spartan;
-  font-size: 12px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: 1px;
-  text-align: center;
-  color: var(--toggle-color);
+.header > span {
+	width: 51px;
+	height: 13px;
+	margin: 26px 21px 5px 0;
+	font-family: Spartan;
+	font-size: 12px;
+	font-weight: bold;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: 1px;
+	text-align: center;
+	color: var(--toggle-color);
 }
 
 /* numbers 1 2 3 above toggleBtn */
-.SeveralSituations{
-  width: 12px;
-  height: 13px;
-  margin: 0 10px 5px 11px;
-  font-family: Spartan;
-  font-size: 12px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: center;
-  color: var(--toggle-color);
+.SeveralSituations {
+	width: 12px;
+	height: 13px;
+	margin: 0 10px 5px 11px;
+	font-family: Spartan;
+	font-size: 12px;
+	font-weight: bold;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	text-align: center;
+	color: var(--toggle-color);
 }
 
-.App > .header > div > .toggleBtn{
-  width: 71px;
-  height: 26px;
-  margin: 5px 0 0;
-  padding: 5px 50px 5px 5px;
-  border-radius: 13px;
-  background-color: var(--toogle-btnToggleColor);
+.App > .header > div > .toggleBtn {
+	width: 71px;
+	height: 26px;
+	margin: 5px 0 0;
+	padding: 5px 50px 5px 5px;
+	border-radius: 13px;
+	background-color: var(--toogle-btnToggleColor);
 }
 
 /* circle in toggleBtn */
-.App > .header > div > .toggleBtn> div{
-  width: 16px;
-  height: 16px;
-  background-color: var(--toogle-btnToggleColorCircle);
-  border-radius: 50px;
-
+.App > .header > div > .toggleBtn > div {
+	width: 16px;
+	height: 16px;
+	background-color: var(--toogle-btnToggleColorCircle);
+	border-radius: 50px;
 }

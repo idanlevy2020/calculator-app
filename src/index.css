@@ -12,6 +12,7 @@ body {
 .flex-row{
   display: flex;
   flex-direction: row;
+  
 }
 
 .flex-column{
