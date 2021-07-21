@@ -145,7 +145,7 @@ function App() {
     return (
         <div className="App flex-column">
             <div className="header flex-row">
-                <h1 id="calc">calc</h1>
+                <h1 id="calc">Calc</h1>
                 <span>THEME</span>
                 <div>
                     <span className="SeveralSituations"> 1 </span>
