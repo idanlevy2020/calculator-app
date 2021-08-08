@@ -38,14 +38,61 @@ import './Display.css';
 //   return exp;
 // }
 
+function getDisplayValue(expressions) {
+	// loop over all expressions
+	// if expression its number -> check if nedd comma
+	//    if its need comma -> add comma
+	// else return expressions
+
+	return expressions.map(expression => {
+		if (!isNaN(Number(expression))) {
+			//nubmer
+			const dot = expression.indexOf('.');
+			let afterDot = null;
+			let numbers;
+			if (dot === -1) {
+				numbers = expression.split('').reverse();
+			} else {
+				numbers = expression.split('.')[0].split('').reverse();
+				afterDot = expression.split('.')[1];
+			}
+			let result = [];
+			console.log('numbers', numbers);
+			numbers.forEach((number, index) => {
+				if (index > 0 && index % 3 === 0) {
+					result.push(',');
+					result.push(number);
+				} else {
+					result.push(number);
+				}
+			});
+      console.log('afterDot',afterDot);
+			let final = result.reverse().join('');
+			if (dot !== -1) {
+				final = final + '.' + afterDot;
+			}
+			return final;
+		} else {
+			// not numbers
+			return expression;
+		}
+	});
+}
+
 function CalculatorDisplay(props) {
-  // let e=addComma(props.expression)
-  return (
-    <div id="Display">
-      {/* <span id="DisplayValue">{e}</span> */}
-      <span id="DisplayValue">{props.expression}</span>
-    </div>
-  );
+	// let e=addComma(props.expression)
+
+	console.log('props.expression', props.expression);
+	const displayValue = getDisplayValue(props.expression);
+	console.log('displayValue', displayValue);
+	return (
+		<div id='Display'>
+			{/* <span id="DisplayValue">{e}</span> */}
+			<span id='DisplayValue'>{displayValue}</span>
+		</div>
+	);
 }
 
 export default CalculatorDisplay;
+
+ 
