@@ -1,0 +1,25 @@
+/* Display — contains the display area on the top*/
+#Display{
+  width: 327px;
+  height: 88px;
+  border-radius: 10px;
+  background-color: #181f33;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+#Display > #DisplayValue{
+  font-family: Spartan;
+  font-size: 36px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.53px;
+  text-align: right;
+  color: #ffffff;
+  padding-right: 24px;
+  padding-top: 26px;
+  padding-bottom: 26px;
+}

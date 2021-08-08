@@ -24,7 +24,7 @@
 .App {
 	width: 375px;
 	height: 667px;
-	background-color: var(--primary);
+	background-color: var(--toggle-bgcolor);
 	align-items: center;
 }
 
