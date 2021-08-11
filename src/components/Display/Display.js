@@ -2,48 +2,12 @@
 
 import './Display.css';
 
-// function addComma(expression){
-//   function reverse(str){
-//     let newString='';
-//     for (var i = str.length - 1; i >= 0; i--) {
-//       newString += str[i];
-//     }
-//     return newString;
-//   }
-
-//   let exp=[];
-//   for(let i=0;i<expression.length;i++){
-//     if((expression[i]=="+") ||
-//         (expression[i]=="-") ||
-//         (expression[i]=="/") ||
-//         (expression[i]=="*")){
-//         exp.push(expression[i]);
-//     }
-//     else{
-//       // let index_point=expression[i].indexOf(".");
-//       exp.push(expression[i]);
-//       let val;
-//       if(exp[i].length>3){
-//         let index=0;
-//         for(let j=0;j<exp[i].length;j++){
-//           if (index%4==0) val[index]=',';
-//           val[index]=exp[i][j];
-//           index++;
-//         }
-//         console.log('val',val);
-//       }
-//       }
-//   }
-//   console.log('exp:',exp);
-//   return exp;
-// }
-
-function getDisplayValue(expressions) {
+function addCommas(expressions) {
+	console.log('in addCommas expression', expressions);
 	// loop over all expressions
-	// if expression its number -> check if nedd comma
-	//    if its need comma -> add comma
+	// if expression its number -> check if need comma
+	// if its need comma -> add comma
 	// else return expressions
-
 	return expressions.map(expression => {
 		if (!isNaN(Number(expression))) {
 			//nubmer
@@ -79,20 +43,21 @@ function getDisplayValue(expressions) {
 	});
 }
 
-function CalculatorDisplay(props) {
+function Display(props) {
 	// let e=addComma(props.expression)
-
-	console.log('props.expression', props.expression);
-	const displayValue = getDisplayValue(props.expression);
+	console.log('in props.expression', props.expression);
+	const displayValue = addCommas(props.expression);
 	console.log('displayValue', displayValue);
 	return (
 		<div id='Display'>
 			{/* <span id="DisplayValue">{e}</span> */}
-			<span id='DisplayValue'>{displayValue}</span>
+			<span id="DisplayValue">{displayValue}</span> 
+			{/* <input type="text" id='DisplayValue' placeholder={displayValue} /> */}
 		</div>
+		
 	);
 }
 
-export default CalculatorDisplay;
+export default Display;
 
  

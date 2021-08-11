@@ -3,11 +3,33 @@
   width: 327px;
   height: 88px;
   border-radius: 10px;
-  background-color: #181f33;
+  background-color: var(--display-bgcolor);
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
+
+/* input{
+  width: 327px;
+  height: 88px;
+  border-radius: 10px;
+  background-color: #181f33;
+  /* display: flex;
+  flex-direction: row;
+  justify-content: flex-end; 
+  font-family: Spartan;
+  font-size: 36px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.53px;
+  text-align: right;
+  color: #ffffff;
+  padding-right: 24px;
+  padding-top: 26px;
+  padding-bottom: 26px;
+} */
 
 #Display > #DisplayValue{
   font-family: Spartan;
@@ -18,7 +40,7 @@
   line-height: normal;
   letter-spacing: -0.53px;
   text-align: right;
-  color: #ffffff;
+	color: var(--display-color);
   padding-right: 24px;
   padding-top: 26px;
   padding-bottom: 26px;

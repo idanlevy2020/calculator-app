@@ -3,7 +3,7 @@
 	height: 420px;
 	margin: 24px 0 0;
 	border-radius: 10px;
-	background-color: #242d44;
+	background-color: var(--keypad-bgcolor);
 	justify-content: center;
 	align-items: space-between;
 	display: grid;

@@ -2,7 +2,7 @@
 import "./Keypad.css";
 import Button from "../Button/Button";
 
-const buttons = [
+export let buttons = [
     { value: '7', className: "",typeVal:"number" },
     { value: '8', className: "",typeVal:"number" },
     { value: '9', className: "",typeVal:"number" },

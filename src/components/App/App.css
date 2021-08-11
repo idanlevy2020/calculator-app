@@ -1,24 +1,58 @@
-:root {
-	--toggle-bgcolor: #3a4663;
-	--toggle-color: #ffffff;
-	--toogle-btnToggleColorCircle: #d03f2f;
-	--toogle-btnToggleColor: #242d44;
-	--toggle2-bgcolor: #e6e6e6;
-	--toogle2-btnToggleColor: #d2cdcd;
-	--toogle2-btnToggleColorCircle: #c85402;
-}
+
 
 .App.theme-1 {
 	--primary: #3a4663;
-	--btn-color: red;
+	--toggleBtn-bgcolor: #242d44;
+	--toggleBtn-circle: #d03f2f;
+	--toggleBtn-circle-dir: flex-start;
+	--display-bgcolor: #181f33;
+	--display-color: #ffffff;
+	--keypad-bgcolor: #242d44;
+	--btn-bgcolor: #eae3dc;
+	--btn-shadow: #a79e91;
+	--btn-color: #434a59;
+	--DelResetBtn-bgcolor: #647198;
+	--DelResetBtn-shadow: #414e73;
+	--DelResetBtn-color: #ffffff;
+	--equalBtn-bgcolor: #d03f2f;
+	--equalBtn-shadow: #93261a;
+	--equalBtn-color: #ffffff;
 }
 .App.theme-2 {
 	--primary: #e6e6e6;
-	--btn-color: red;
+	--toggleBtn-bgcolor: #d2cdcd;
+	--toggleBtn-circle: #c85402;
+	--toggleBtn-circle-dir: center;
+	--display-bgcolor: #eeeeee;
+	--display-color: #36362c;
+	--keypad-bgcolor: #d2cdcd;
+	--btn-bgcolor: #131008;
+	--btn-shadow: #a79e91;
+	--btn-color: #36362c;
+	--DelResetBtn-bgcolor: #378187;
+	--DelResetBtn-shadow: #1b6066;
+	--DelResetBtn-color: #ffffff;
+	--equalBtn-bgcolor: #c85402;
+	--equalBtn-shadow: #873901;
+	--equalBtn-color: #ffffff;
 }
 .App.theme-3 {
-	--primary: blue;
-	--btn-color: green;
+	--primary: #17062a;
+	--toggleBtn-bgcolor: #1e0936;
+	--toggleBtn-circle: #00ded0;
+	--toggleBtn-circle-dir: flex-end;
+	--display-bgcolor: #1e0936;
+	--display-color: #ffe53d;
+	--keypad-bgcolor: #1e0936;
+	--btn-bgcolor: #331c4d;
+	--btn-shadow: #881c9e;
+	--btn-color: #ffe53d;
+	--DelResetBtn-bgcolor: #56077c;
+	--DelResetBtn-shadow: #be15f4;
+	--DelResetBtn-color: #ffffff;
+	--equalBtn-bgcolor: #00ded0;
+	--equalBtn-shadow: #6cf9f1;
+	--equalBtn-color: #ffffff;
 }
 
 .App {
@@ -45,7 +79,7 @@
 	line-height: normal;
 	letter-spacing: -0.53px;
 	text-align: center;
-	color: var(--toggle-color);
+	color: var(--display-color);
 }
 
 /*THEME*/
@@ -61,14 +95,14 @@
 	line-height: normal;
 	letter-spacing: 1px;
 	text-align: center;
-	color: var(--toggle-color);
+	color: var(--display-color);
 }
 
 /* numbers 1 2 3 above toggleBtn */
 .SeveralSituations {
 	width: 12px;
 	height: 13px;
-	margin: 0 10px 5px 11px;
+	margin: 0 5px 5px 10px;
 	font-family: Spartan;
 	font-size: 12px;
 	font-weight: bold;
@@ -77,7 +111,7 @@
 	line-height: normal;
 	letter-spacing: normal;
 	text-align: center;
-	color: var(--toggle-color);
+	color: var(--display-color);
 }
 
 .App > .header > div > .toggleBtn {
@@ -86,13 +120,20 @@
 	margin: 5px 0 0;
 	padding: 5px 50px 5px 5px;
 	border-radius: 13px;
-	background-color: var(--toogle-btnToggleColor);
+	background-color: var(--toggleBtn-bgcolor);
+}
+
+.App > .header > div > .toggleBtn > #toggle{
+	width:58px;
+	display:flex;
+	justify-content: var(--toggleBtn-circle-dir);
 }
 
 /* circle in toggleBtn */
-.App > .header > div > .toggleBtn > div {
+.App > .header > div > .toggleBtn > #toggle > #circle {
 	width: 16px;
 	height: 16px;
-	background-color: var(--toogle-btnToggleColorCircle);
+	background-color: var(--toggleBtn-circle);
 	border-radius: 50px;
 }
+

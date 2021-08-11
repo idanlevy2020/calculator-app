@@ -10,8 +10,9 @@
 	/* margin: 0 13px 13px 0; */
 	padding: 10px 10px 14px;
 	border-radius: 5px;
-	box-shadow: inset 0 -4px 0 0 #b3a497;
-	background-color: #eae3dc;
+	border: 0px;
+	box-shadow: inset 0 -4px 0 0 var(--btn-shadow);
+	background-color: var(--btn-bgcolor);
 
 	font-family: Spartan;
 	font-size: 28px;
@@ -21,7 +22,7 @@
 	line-height: normal;
 	letter-spacing: -0.47px;
 	text-align: center;
-	color: #434a59;
+	color: var(--btn-color);
 }
 
 .keypad .equalBtn {
@@ -31,10 +32,9 @@
 	margin: 13px 0 0 0px;
 	padding: 9px 22px 15px;
 	border-radius: 5px;
-	box-shadow: inset 0 -4px 0 0 #93261a;
-	/* background-color: var(--btn-color); */
-	background-color: #d03f2f;
-	color: #ffffff;
+	box-shadow: inset 0 -4px 0 0 var(--equalBtn-shadow);
+	background-color: var(--equalBtn-bgcolor);
+	color: var(--equalBtn-color);
 }
 
 .keypad .resetBtn {
@@ -44,10 +44,11 @@
 	margin: 13px 0px 0 0;
 	padding: 9px 22px 15px;
 	border-radius: 5px;
-	box-shadow: inset 0 -4px 0 0 #414e73;
-	background-color: var(--primary);
-	color: #ffffff;
+	box-shadow: inset 0 -4px 0 0 var(--DelResetBtn-shadow);
+	background-color: var(--DelResetBtn-bgcolor);
+	color: var(--DelResetBtn-color);
 }
+
 
 .keypad .delBtn {
 	font-size: 20px;
@@ -57,7 +58,7 @@
 	/* margin: 0 0 13px 13px; */
 	padding: 9px 10px 15px;
 	border-radius: 5px;
-	box-shadow: inset 0 -4px 0 0 #414e73;
-	background-color: #647198;
-	color: #ffffff;
+	box-shadow: inset 0 -4px 0 0 var(--DelResetBtn-shadow);
+	background-color: var(--DelResetBtn-bgcolor);
+	color: var(--DelResetBtn-color);
 }
